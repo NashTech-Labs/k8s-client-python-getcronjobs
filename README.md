@@ -47,8 +47,6 @@ And run following command:
 
 `python3 get-cronjob.py`
 
-you'll look like something below
-
 #### List the cronjobs in default namespace:
 
 set if all_namespaces is False:
