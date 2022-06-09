@@ -16,7 +16,7 @@ we can use the client module to interact with the resources.
 
 `GetResources:` kubectl get commands are used to list all kinds of resources in a cluster for eg:
 
-`List cronjobs:` To list all the cronjobs in the cluster, we fire following kubectl command:
+To list all the cronjobs in the cluster, we fire following kubectl command:
 
 ```kubectl get cronjobs``` 
 
