@@ -16,9 +16,9 @@ we can use the client module to interact with the resources.
 
 `GetResources:` kubectl get commands are used to list all kinds of resources in a cluster for eg:
 
-`List nodes:` To list all the cronjobs in the cluster, we fire following kubectl command:
+`List cronjobs:` To list all the cronjobs in the cluster, we fire following kubectl command:
 
-```kubectl get cronjobs``` \# lists all the cronjobs
+```kubectl get cronjobs``` 
 
 In Python, we instantiate BatchV1beta1Api class from client module:
 
