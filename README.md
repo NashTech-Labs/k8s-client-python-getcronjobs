@@ -1,4 +1,4 @@
-### Python client for the kubernetes API.
+﻿### Python client for the kubernetes API.
 
 ### Installation From source:
 
@@ -55,4 +55,3 @@ set if all_namespaces is False:
 
 `python3 get-cronjob.py`
 
-Also you can  specific namespace you can pass getcronjobs() parameter named as namespace="namespace-name"
