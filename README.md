@@ -1,8 +1,9 @@
-#Python client for the kubernetes API.
+### Python client for the kubernetes API.
 
-###Installation From source:
+### Installation From source:
 
-git clone --recursive https://github.com/kubernetes-client/python.git cd
+'''git clone --recursive https://github.com/kubernetes-client/python.git cd'''
+
 python python setup.py install From PyPI directly:
 
 pip install kubernetes
