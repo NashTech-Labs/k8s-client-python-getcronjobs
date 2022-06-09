@@ -6,12 +6,12 @@
 
 python python setup.py install From PyPI directly:
 
-pip install kubernetes
+`pip install kubernetes`
 
-Interacting with Kubernetes Resources
+#### Interacting with Kubernetes Resources
 
-we can use the client module to interact with the resources. Get
-Resources: kubectl get commands are used to list all kinds of resources
+we can use the client module to interact with the resources. 
+`/GetResources:` kubectl get commands are used to list all kinds of resources
 in a cluster for eg:
 
 -   List nodes: To list all the cronjobs in the cluster, we fire
