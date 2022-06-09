@@ -5,9 +5,9 @@ def __get_kubernetes_client(bearer_token,api_server_endpoint):
         configuration = client.Configuration()
         configuration.host = api_server_endpoint
         configuration.verify_ssl = False
-        configuration.api_key = {"authorization": "Bearer " + bearer_token}
+        configuration.api_key = {"authorization": "Bearer " + bearer_token} # for authentication to the GKE Cluster
         client.Configuration.set_default(configuration)
-        client_api = client.BatchV1beta1Api()
+        client_api = client.BatchV1beta1Api() #BatchV1beta1Api for interacting with cronjobs
         return client_api
     except Exception as e:
         print("Error getting kubernetes client \n{}".format(e))
@@ -18,9 +18,8 @@ def getcronjobs(cluster_details,namespace="default",all_namespaces=True):
             bearer_token=cluster_details["bearer_token"],
             api_server_endpoint=cluster_details["api_server_endpoint"],
         )
-        if all_namespaces is True:
+        if all_namespaces is True: #list all the cronjobs in all namespaces
             
-
             ret =client_api.list_cron_job_for_all_namespaces(watch=False)
             temp_dict_obj={}
             temp_list_obj=[]
@@ -30,11 +29,11 @@ def getcronjobs(cluster_details,namespace="default",all_namespaces=True):
                     "namespace": i.metadata.namespace
                 }
                 temp_list_obj.append(temp_dict_obj)
-                print("cronjob under all namespaces: {}".format(temp_list_obj))
+            print("cronjob under all namespaces: {}".format(temp_list_obj))
             return temp_list_obj
         else:
-            cronjob_list = client_api.list_namespaced_cron_job("{}".format(namespace))
-            print("cronjob under all namespaces:{}".format(cronjob_list))
+            cronjob_list = client_api.list_namespaced_cron_job("{}".format(namespace)) #list the cronjobs of default namespace
+            print("cronjob under default namespaces:{}".format(cronjob_list))
             return cronjob_list
 
 if __name__ == "__main__":
