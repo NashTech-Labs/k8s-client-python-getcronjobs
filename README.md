@@ -2,9 +2,11 @@
 
 ### Installation From source:
 
-`git clone --recursive https://github.com/kubernetes-client/python.git cd`
+`git clone --recursive https://github.com/kubernetes-client/python.git cd
+ cd python
+ python setup.py install`
 
-python python setup.py install From PyPI directly:
+ From PyPI directly:
 
 `pip install kubernetes`
 
@@ -20,41 +22,36 @@ we can use the client module to interact with the resources.
 
 In Python, we instantiate BatchV1beta1Api class from client module:
 
-client_api = client.BatchV1beta1Api()
+`client_api = client.BatchV1beta1Api()`
 
 Here I've created the client with it's respective class BatchV1beta1Api
 and storing in a var named as client_api. so furture we can use it.
 
-KubeConfig: to pass the on local cluster e.g minikube we use bellow
-command: config. load_kube_config()
+`KubeConfig:` to pass the on local cluster e.g minikube we use bellowcommand: 
+`config. load_kube_config()`
 
-Authenticating to the Kubernetes API server
+#### Authenticating to the Kubernetes API server
 
-but what if you want to list all the automated cronjobs of a GKE Cluster
-, you must need to authenticate the configuration
+But what if you want to list all the automated cronjobs of a GKE Cluster, you must need to authenticate the configuration
 
-configuration.api_key = {"authorization": "Bearer" + bearer_token} \#
-for authentication to the GKE Cluster
+`configuration.api_key = {"authorization": "Bearer" + bearer_token}` \#for authentication to the GKE Cluster
 
-I've used Bearer Token which enable requests to authenticate using an
-access key,
+I've used Bearer Token which enable requests to authenticate using an access key.
 
-List the cronjobs in all namespaces:
+#### List the cronjobs in all namespaces:
 
-set if all_namespaces is True:
+Set if all_namespaces is True:
 
-and run following command:
+And run following command:
 
-python3 get-cronjob.py
+`python3 get-cronjob.py`
 
 you'll look like something below
 
-Screenshot from 2022-06-09 13-40-03.png List the cronjobs in default
-namespace:
+#### List the cronjobs in default namespace:
 
 set if all_namespaces is False:
 
-python3 get-cronjob.py
+`python3 get-cronjob.py`
 
-and any specific namespace you can pass getcronjobs() parameter named as
-namespace="namespace-name"
+Also you can  specific namespace you can pass getcronjobs() parameter named as namespace="namespace-name"
