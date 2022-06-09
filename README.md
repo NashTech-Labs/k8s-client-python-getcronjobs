@@ -2,9 +2,9 @@
 
 ### Installation From source:
 
-`git clone --recursive https://github.com/kubernetes-client/python.git cd
- cd python
- python setup.py install`
+`git clone --recursive https://github.com/kubernetes-client/python.git cd`
+ `cd python`
+ `python setup.py install`
 
  From PyPI directly:
 
